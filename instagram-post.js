@@ -35,6 +35,7 @@ export class InstagramPost extends DDDSuper(I18NMixin(LitElement)) {
         display: block;
         background-color: var(--ddd-theme-default-white);
         border: 1px solid var(--ddd-theme-default-limestoneGray);
+        color: var(--ddd-theme-default-coalyGray);
         border-radius: var(--ddd-radius-sm);
         font-family: var(--ddd-font-primary);
         max-width: 800px;

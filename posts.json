@@ -1,0 +1,94 @@
+{
+    "posts": [
+        {
+            "username": "bluwie_pix",
+            "image": "https://api.api-ninjas.com/v1/randomimage",
+            "caption": "Lorem ipsum",
+            "avatar": "https://api.api-ninjas.com/v1/randomimage"
+        },
+        {
+            "username": "withsummerian",
+            "image": "https://api.api-ninjas.com/v1/randomimage",
+            "caption":"Lorem ipsum",
+            "avatar":"https://api.api-ninjas.com/v1/randomimage"
+        },
+        {
+            "username": "flowerbeangarden",
+            "image": "https://api.api-ninjas.com/v1/randomimage",
+            "caption":"Lorem ipsum",
+            "avatar":"https://api.api-ninjas.com/v1/randomimage"
+        },
+        {
+            "username": "bright_sunny",
+            "image": "https://api.api-ninjas.com/v1/randomimage",
+            "caption": "Lorem ipsum",
+            "avatar":"https://api.api-ninjas.com/v1/randomimage"
+        },
+        {
+            "username": "sunskie",
+            "image": "https://api.api-ninjas.com/v1/randomimage",
+            "caption": "Lorem ipsum",
+            "avatar": "https://api.api-ninjas.com/v1/randomimage"
+        },
+        {
+            "username": "mysticfae",
+            "image": "https://api.api-ninjas.com/v1/randomimage",
+            "caption": "Lorem ipsum",
+            "avatar": "https://api.api-ninjas.com/v1/randomimage"
+        },
+        {
+            "username": "chaeese",
+            "image":"https://api.api-ninjas.com/v1/randomimage",
+            "caption": "Lorem ipsum",
+            "avatar": "https://api.api-ninjas.com/v1/randomimage"
+        },
+        {
+            "username": "jjennieqt",
+            "image":"https://api.api-ninjas.com/v1/randomimage",
+            "caption": "Lorem ipsum",
+            "avatar": "https://api.api-ninjas.com/v1/randomimage"
+        }, 
+        {
+            "username": "blueb3rry",
+            "image":"https://api.api-ninjas.com/v1/randomimage",
+            "caption": "Lorem ipsum",
+            "avatar": "https://api.api-ninjas.com/v1/randomimage"
+        },
+        {
+            "username": "yunnjoutt",
+            "image":"https://api.api-ninjas.com/v1/randomimage",
+            "caption": "Lorem ipsum",
+            "avatar": "https://api.api-ninjas.com/v1/randomimage"
+        },
+        {
+            "username": "ryujinspo",
+            "image":"https://api.api-ninjas.com/v1/randomimage",
+            "caption": "Lorem ipsum",
+            "avatar": "https://api.api-ninjas.com/v1/randomimage"
+        },
+        {
+            "username": "salunarchive",
+            "image":"https://api.api-ninjas.com/v1/randomimage",
+            "caption": "Lorem ipsum",
+            "avatar": "https://api.api-ninjas.com/v1/randomimage"
+        },
+        {
+            "username": "yvnangel",
+            "image":"https://api.api-ninjas.com/v1/randomimage",
+            "caption": "Lorem ipsum",
+            "avatar": "https://api.api-ninjas.com/v1/randomimage"
+        },
+        {
+            "username": "cheabea",
+            "image":"https://api.api-ninjas.com/v1/randomimage",
+            "caption": "Lorem ipsum",
+            "avatar": "https://api.api-ninjas.com/v1/randomimage"
+        },
+        {
+            "username": "dreamy.glimpse",
+            "image":"https://api.api-ninjas.com/v1/randomimage",
+            "caption": "Lorem ipsum",
+            "avatar": "https://api.api-ninjas.com/v1/randomimage"
+        }
+    ]
+}

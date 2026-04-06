@@ -33,53 +33,57 @@ export class PlayListSlide extends DDDSuper(I18NMixin(LitElement)) {
     css`
       :host {
         display: block;
-        color: var(--ddd-theme-primary);
-        background-color: transparent;
+        background-color: var(--ddd-theme-default-white);
+        border: 1px solid var(--ddd-theme-default-limestoneGray);
+        border-radius: var(--ddd-radius-sm);
         font-family: var(--ddd-font-primary);
-        font-weight: var(--ddd-font-weight-medium);
-      }
-      :host([active]) {
-        display: block;
-      }
-
-      .wrapper {
-        margin: var(--ddd-spacing-2);
-        padding: var(--ddd-spacing-4);
+        max-width: 450px;
+        margin: auto;
+        overflow: hidden;
       }
       
-      .top-heading{
-        font-size: var(--ddd-font-size-xxs);
-        font-weight: var(--ddd-font-weight-bold);
-        text-transform: uppercase;
-        color: var(--ddd-theme-default-link);
-        max-width: 250px;
+      .card-header {
+        display: flex;
+        align-items: center;
+        padding: var(--ddd-spacing-3);
+      }
 
+      .avatar {
+        width: 32px;
+        height: 32px;
+        background-color: var(--ddd-theme-default-skyBlue);
+        border-radius: var(--ddd-radius-circle);
+        margin-right: var(--ddd-spacing-3);
       }
-      .subheading {
-        font-size: var(--ddd-font-size-xxl);
+      
+      .top-heading {
+        font-size: var(--ddd-font-size-s);
         font-weight: var(--ddd-font-weight-bold);
-        color: var(--ddd-theme-default-info);
-        max-width: 250px;
-      }
-      hr {
-        width: 80px;
-        min-height: 1px;
-        padding-top: 4px;
-        padding-bottom: 4px;
-        margin-left: 0;
-        margin-right: auto;
-        color: var(--ddd-theme-default-skyBlue);
-        margin-top: 4px;
-      }
-      .details {
-        min-height: 200px;
-        max-height: 200px;
-        max-width: 450px;
         color: var(--ddd-theme-default-coalyGray);
-        font-weight: var(--ddd-font-weight-regular);
-        line-height: var(--ddd-lh-140);
-        text-align: left;
-        overflow-y: auto;
+      }
+
+      .fox-image {
+        width: 100%;
+        display: block;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: var(--ddd-spacing-4);
+      }
+
+      .subheading {
+        font-size: var(--ddd-font-size-s);
+        font-weight: var(--ddd-font-weight-bold);
+        margin-bottom: var(--ddd-spacing-2);
+        display: block;
+      }
+    
+      .details {
+        font-size: var(--ddd-font-size-xs);
+        color: var(--ddd-theme-default-slateGray);
+        line-height: var(--ddd-lh-120);
       }
 
     `];
@@ -88,18 +92,22 @@ export class PlayListSlide extends DDDSuper(I18NMixin(LitElement)) {
   // Lit render the HTML
   render() {
     return html`
-        <div class="play-list-slide" title="${this.title}">
-            <div class="wrapper">
-                <span class="top-heading">${this.topHeading}</span>
-                <br>
-                <span class="subheading">${this.subheading}</span>
-                <hr>
-                <img src="${this.image}" alt="Fox" style="width:100%; border-radisu:8px;">
-                <div class="details">
-                  <slot></slot>
-                </div>
-            </div>
-        </div>`;
+      <div class="play-list-slide">
+        <div class="card-header">
+          <div class="avatar"></div>
+          <span class="top-heading">${this.topHeading}</span>
+        </div>
+
+        <img class="fox-image" src="${this.image}" alt="Random Fox Image">
+
+        <div class="card-content">
+          <span class="subheading">${this.subheading}</span>
+          <div class="details">
+            <slot></slot>
+          </div>
+        </div>
+      </div>
+        `;
 }
 
 }

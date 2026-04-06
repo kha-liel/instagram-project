@@ -33,7 +33,8 @@ export class InstagramProject extends DDDSuper(I18NMixin(LitElement)) {
       ...super.properties,
       index: { type: Number, reflect : true },
       total : { type: Number},
-      foxData : { type: Object }
+      // foxData : { type: Object }
+      posts : { type: Array }
     };
   }
 
@@ -141,7 +142,7 @@ export class InstagramProject extends DDDSuper(I18NMixin(LitElement)) {
     const data = await response.json();
     this.foxData = data;
     this.updateSlidesWithFox(data.image);
-  }
+  } 
 
   updateSlidesWithFox(imageUrl) {
     const newSlide = document.createElement('instagram-post');

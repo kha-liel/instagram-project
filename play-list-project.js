@@ -142,8 +142,8 @@ export class PlayListProject extends DDDSuper(I18NMixin(LitElement)) {
 
   updateSlidesWithFox(imageUrl) {
     const newSlide = document.createElement('play-list-slide');
-    newSlide.setAttribute('top-heading','Random Fox');
-    newSlide.setAttribute('subheading','Check-in 1');
+    newSlide.setAttribute('top-heading','fox_explorer_2026');
+    newSlide.setAttribute('subheading','Look at this floof! #foxes');
     newSlide.setAttribute('image',imageUrl);
     newSlide.setAttribute('active','');
     newSlide.innerHTML = `<p>Source: ${imageUrl}</p>`;

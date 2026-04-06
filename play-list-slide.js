@@ -22,7 +22,8 @@ export class PlayListSlide extends DDDSuper(I18NMixin(LitElement)) {
       topHeading: { type : String, attribute: "top-heading" },
       subheading: { type : String, attribute: "subheading" },
       title: { type: String },
-      active: { type: Boolean, reflect : true }
+      active: { type: Boolean, reflect : true },
+      image: { type: String }
     };
   }
 
@@ -93,6 +94,7 @@ export class PlayListSlide extends DDDSuper(I18NMixin(LitElement)) {
                 <br>
                 <span class="subheading">${this.subheading}</span>
                 <hr>
+                <img src="${this.image}" alt="Fox" style="width:100%; border-radisu:8px;">
                 <div class="details">
                   <slot></slot>
                 </div>

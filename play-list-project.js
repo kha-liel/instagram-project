@@ -32,7 +32,8 @@ export class PlayListProject extends DDDSuper(I18NMixin(LitElement)) {
     return {
       ...super.properties,
       index: { type: Number, reflect : true },
-      total : { type: Number}
+      total : { type: Number},
+      foxData : { type: Object }
     };
   }
 
@@ -131,7 +132,30 @@ export class PlayListProject extends DDDSuper(I18NMixin(LitElement)) {
     `;
   }
 
-  handleSlotChage (e) {
+
+  async getFox() {
+    const response = await fetch('https://randomfox.ca/floof/');
+    const data = await response.json();
+    this.foxData = data;
+    this.updateSlidesWithFox(data.image);
+  }
+
+  updateSlidesWithFox(imageUrl) {
+    const newSlide = document.createElement('play-list-slide');
+    newSlide.setAttribute('top-heading','Random Fox');
+    newSlide.setAttribute('subheading','Check-in 1');
+    newSlide.setAttribute('image',imageUrl);
+    newSlide.setAttribute('active','');
+    newSlide.innerHTML = `<p>Source: ${imageUrl}</p>`;
+
+    this.innerHTML = '';
+    this.appendChild(newSlide);
+
+    this.total = 1;
+  }
+
+
+  handleSlotChange (e) {
     const slides = Array.from(this.querySelectorAll('play-list-slide'));
     this.total = slides.length;
   }
@@ -176,6 +200,8 @@ export class PlayListProject extends DDDSuper(I18NMixin(LitElement)) {
 
 
 firstUpdated() {
+  console.log("Component loaded, fetching fox...");
+  this.getFox();
   this.updatedVisibleSlide();
 }
 

@@ -92,19 +92,17 @@ export class InstagramProject extends DDDSuper(I18NMixin(LitElement)) {
         display: block;
       }
       .navigation-controls {
-        display: none; // don't need these now i think
         position: absolute;
         top: 50%;
         left: 0;
         right: 0;
         transform: translateY(-50%);
-        // display: flex;
+        display: flex;
         justify-content: space-between;
         padding: 0 var(--dd-spacing-5);
         z-index: 10;
       }
       .dots-indicator-container {
-        display: none; // don't need these now i think too
         position: absolute;
         bottom: var(--ddd-spacing-10);
         left: var(--ddd-spacing-20);
@@ -136,15 +134,43 @@ export class InstagramProject extends DDDSuper(I18NMixin(LitElement)) {
     `;
   }
 
-
-  async getFox() {
+  // take this out
+  /* async getFox() {
     const response = await fetch('https://randomfox.ca/floof/');
     const data = await response.json();
     this.foxData = data;
     this.updateSlidesWithFox(data.image);
-  } 
+  } */
 
-  updateSlidesWithFox(imageUrl) {
+// async getFox() replacement
+async getData() {
+  const dataUrl = new URL('./posts.json', import.meta.url).href;
+  const response = await fetch(dataUrl);
+  const data = await response.json();
+  this.posts = data.posts;
+  this.renderFromData();
+}
+
+// updateSlidesWithFox() replacement
+renderFromData() {
+  this.innerHTML = '';
+  this.posts.forEach((post, i) => {
+    const item = document.createElement('instagram-post');
+    item.setAttribute('top-heading', post.username);
+    item.setAttribute('image', post.image);
+
+    if (i==0) {
+      item.setAttribute('active', '');
+    }
+
+    item.innerHTML = `<p>${post.caption}</p>`;
+    this.appendChild(item);
+  });
+  this.total = this.posts.length; // sets total posts = 15
+}
+
+  // take this out
+  /* updateSlidesWithFox(imageUrl) {
     const newSlide = document.createElement('instagram-post');
     newSlide.setAttribute('top-heading','fox_explorer_2026');
     newSlide.setAttribute('subheading','Look at this floof! #foxes');
@@ -155,7 +181,7 @@ export class InstagramProject extends DDDSuper(I18NMixin(LitElement)) {
     this.innerHTML = '';
     this.appendChild(newSlide);
     this.total = 1;
-  }
+  } */
 
 
   handleSlotChange (e) {
@@ -201,12 +227,12 @@ export class InstagramProject extends DDDSuper(I18NMixin(LitElement)) {
     });
   }
 
-
-firstUpdated() {
+// take this out
+/* firstUpdated() {
   console.log("Component loaded, fetching fox...");
   this.getFox();
   this.updatedVisibleSlide();
-}
+} */
 
 updated(changedProperties) {
   if (changedProperties.has('index')) {

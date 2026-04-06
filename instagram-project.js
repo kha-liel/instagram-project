@@ -5,20 +5,20 @@
 import { LitElement, html, css } from "lit";
 import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
-import "./play-list-slide.js";
+import "./instagram-post.js";
 import "./navigation-arrows.js";
 import "./slide-indicator.js";
 
 /**
- * `play-list-project`
+ * `instagram-project`
  * 
  * @demo index.html
- * @element play-list-project
+ * @element instagram-project
  */
-export class PlayListProject extends DDDSuper(I18NMixin(LitElement)) {
+export class InstagramProject extends DDDSuper(I18NMixin(LitElement)) {
 
   static get tag() {
-    return "play-list-project";
+    return "instagram-project";
   }
   
   constructor() {
@@ -67,7 +67,7 @@ export class PlayListProject extends DDDSuper(I18NMixin(LitElement)) {
           margin: var(--ddd-spacing-4) auto;
           min-height: auto;
         }
-        ::slotted(play-list-slide) {
+        ::slotted(instagram-post) {
           --ddd-font-size-xl: var(--ddd-font-size-l)
         }
       }
@@ -84,10 +84,10 @@ export class PlayListProject extends DDDSuper(I18NMixin(LitElement)) {
           justify-content: space-around;
         }
       }
-      ::slotted(play-list-slide:not([active])) {
+      ::slotted(instagram-post:not([active])) {
         display: none;
       }
-      ::slotted(play-list-slide[active]) {
+      ::slotted(instagram-post[active]) {
         display: block;
       }
       .navigation-controls {
@@ -144,7 +144,7 @@ export class PlayListProject extends DDDSuper(I18NMixin(LitElement)) {
   }
 
   updateSlidesWithFox(imageUrl) {
-    const newSlide = document.createElement('play-list-slide');
+    const newSlide = document.createElement('instagram-post');
     newSlide.setAttribute('top-heading','fox_explorer_2026');
     newSlide.setAttribute('subheading','Look at this floof! #foxes');
     newSlide.setAttribute('image',imageUrl);
@@ -158,7 +158,7 @@ export class PlayListProject extends DDDSuper(I18NMixin(LitElement)) {
 
 
   handleSlotChange (e) {
-    const slides = Array.from(this.querySelectorAll('play-list-slide'));
+    const slides = Array.from(this.querySelectorAll('instagram-post'));
     this.total = slides.length;
   }
 
@@ -167,7 +167,7 @@ export class PlayListProject extends DDDSuper(I18NMixin(LitElement)) {
   }
 
   prevSlide() {
-    const slides = Array.from(this.querySelectorAll('play-list-slide'));
+    const slides = Array.from(this.querySelectorAll('instagram-post'));
     if (this.index <= 0) {
       this.index = slides.length - 1;
     } else {
@@ -176,7 +176,7 @@ export class PlayListProject extends DDDSuper(I18NMixin(LitElement)) {
   }
 
   nextSlide () {
-    const slides = Array.from(this.querySelectorAll('play-list-slide'));
+    const slides = Array.from(this.querySelectorAll('instagram-post'));
     if (this.index >= slides.length - 1) {
       this.index = 0;
     } else {
@@ -185,7 +185,7 @@ export class PlayListProject extends DDDSuper(I18NMixin(LitElement)) {
   }
 
   updatedVisibleSlide() {
-    const slides = Array.from(this.querySelectorAll('play-list-slide'));
+    const slides = Array.from(this.querySelectorAll('instagram-post'));
     this.total = slides.length;
     
     if (this.index >= slides.length) {
@@ -214,4 +214,4 @@ updated(changedProperties) {
 }
 }
 
-globalThis.customElements.define(PlayListProject.tag, PlayListProject);
+globalThis.customElements.define(InstagramProject.tag, InstagramProject);

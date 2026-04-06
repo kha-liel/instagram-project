@@ -2,9 +2,9 @@ import { LitElement, html, css } from "lit";
 import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
 
-export class PlayListSlide extends DDDSuper(I18NMixin(LitElement)) {
+export class InstagramPost extends DDDSuper(I18NMixin(LitElement)) {
     static get tag() {
-        return "play-list-slide";
+        return "instagram-post";
       }
 
     constructor() {
@@ -95,7 +95,7 @@ export class PlayListSlide extends DDDSuper(I18NMixin(LitElement)) {
   // Lit render the HTML
   render() {
     return html`
-      <div class="play-list-slide">
+      <div class="instagram-post">
         <div class="card-header">
           <div class="avatar"></div>
           <span class="top-heading">${this.topHeading}</span>
@@ -115,4 +115,4 @@ export class PlayListSlide extends DDDSuper(I18NMixin(LitElement)) {
 
 }
 
-globalThis.customElements.define(PlayListSlide.tag, PlayListSlide);
+globalThis.customElements.define(InstagramPost.tag, InstagramPost);

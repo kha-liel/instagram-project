@@ -37,7 +37,7 @@ export class PlayListSlide extends DDDSuper(I18NMixin(LitElement)) {
         border: 1px solid var(--ddd-theme-default-limestoneGray);
         border-radius: var(--ddd-radius-sm);
         font-family: var(--ddd-font-primary);
-        max-width: 450px;
+        max-width: 800px;
         margin: auto;
         overflow: hidden;
       }

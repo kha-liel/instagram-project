@@ -42,7 +42,7 @@ export class PlayListProject extends DDDSuper(I18NMixin(LitElement)) {
     return [super.styles,
     css`
       :host {
-        display: inline-block;
+        display: block;
         color: var(--ddd-theme-primary);
         background-color: transparent;
         border: none;
@@ -51,10 +51,11 @@ export class PlayListProject extends DDDSuper(I18NMixin(LitElement)) {
       .container {
         position: relative;
         display: flex;
+        justify-content: center;
         align-items: center;
-        background-color: var(--ddd-theme-default-slateMaxLight);
+        background-color: transparent;
         padding: var(--ddd-spacing-12);
-        width: 800px;
+        width: 100%;
         min-height: 300px;
         border-radius: var(--ddd-radius-xs);
         border: none;
@@ -90,17 +91,19 @@ export class PlayListProject extends DDDSuper(I18NMixin(LitElement)) {
         display: block;
       }
       .navigation-controls {
+        display: none; // don't need these now i think
         position: absolute;
         top: 50%;
         left: 0;
         right: 0;
         transform: translateY(-50%);
-        display: flex;
+        // display: flex;
         justify-content: space-between;
         padding: 0 var(--dd-spacing-5);
         z-index: 10;
       }
       .dots-indicator-container {
+        display: none; // don't need these now i think too
         position: absolute;
         bottom: var(--ddd-spacing-10);
         left: var(--ddd-spacing-20);

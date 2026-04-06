@@ -146,11 +146,10 @@ export class PlayListProject extends DDDSuper(I18NMixin(LitElement)) {
     newSlide.setAttribute('subheading','Look at this floof! #foxes');
     newSlide.setAttribute('image',imageUrl);
     newSlide.setAttribute('active','');
-    newSlide.innerHTML = `<p>Source: ${imageUrl}</p>`;
+    newSlide.innerHTML = `Look at this floof! #foxes`;
 
     this.innerHTML = '';
     this.appendChild(newSlide);
-
     this.total = 1;
   }
 

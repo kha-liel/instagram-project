@@ -71,16 +71,19 @@ export class PlayListSlide extends DDDSuper(I18NMixin(LitElement)) {
 
       .card-content {
         padding: var(--ddd-spacing-4);
+        text-align: left;
       }
 
       .subheading {
         font-size: var(--ddd-font-size-s);
         font-weight: var(--ddd-font-weight-bold);
-        margin-bottom: var(--ddd-spacing-2);
-        display: block;
+        color: var(--ddd-theme-fefault-coalyGray);
+        margin-right: var(--ddd-spacing-2);
+        display: inline;
       }
     
       .details {
+        display: inline;
         font-size: var(--ddd-font-size-xs);
         color: var(--ddd-theme-default-slateGray);
         line-height: var(--ddd-lh-120);
@@ -101,7 +104,7 @@ export class PlayListSlide extends DDDSuper(I18NMixin(LitElement)) {
         <img class="fox-image" src="${this.image}" alt="Random Fox Image">
 
         <div class="card-content">
-          <span class="subheading">${this.subheading}</span>
+          <span class="subheading">${this.topHeading}</span>
           <div class="details">
             <slot></slot>
           </div>

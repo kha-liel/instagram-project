@@ -39,7 +39,7 @@ export class SlideIndicator extends DDDSuper(I18NMixin(LitElement)) {
         }
 
         .dot.active {
-            background-color: var(--ddd-theme-default-skyBlue);
+            background-color: var(--ddd-theme-default-original87Pink);
         }
         `];
     }

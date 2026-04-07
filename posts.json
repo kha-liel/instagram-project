@@ -2,93 +2,93 @@
     "posts": [
         {
             "username": "bluwie_pix",
-            "image": "https://api.api-ninjas.com/v1/randomimage",
+            "image": "https://picsum.photos/600/600?random=1",
             "caption": "Lorem ipsum",
-            "avatar": "https://api.api-ninjas.com/v1/randomimage"
+            "avatar": "https://picsum.photos/50/50?random=1"
         },
         {
             "username": "withsummerian",
-            "image": "https://api.api-ninjas.com/v1/randomimage",
+            "image": "https://picsum.photos/600/600?random=2",
             "caption":"Lorem ipsum",
-            "avatar":"https://api.api-ninjas.com/v1/randomimage"
+            "avatar":"https://picsum.photos/50/50?random="
         },
         {
             "username": "flowerbeangarden",
-            "image": "https://api.api-ninjas.com/v1/randomimage",
+            "image": "https://picsum.photos/600/600?random=3",
             "caption":"Lorem ipsum",
-            "avatar":"https://api.api-ninjas.com/v1/randomimage"
+            "avatar":"https://picsum.photos/50/50?random=3"
         },
         {
             "username": "bright_sunny",
-            "image": "https://api.api-ninjas.com/v1/randomimage",
+            "image": "https://picsum.photos/600/600?random=4",
             "caption": "Lorem ipsum",
-            "avatar":"https://api.api-ninjas.com/v1/randomimage"
+            "avatar":"https://picsum.photos/50/50?random=4"
         },
         {
             "username": "sunskie",
-            "image": "https://api.api-ninjas.com/v1/randomimage",
+            "image": "https://picsum.photos/600/600?random=5",
             "caption": "Lorem ipsum",
-            "avatar": "https://api.api-ninjas.com/v1/randomimage"
+            "avatar": "https://picsum.photos/50/50?random=5"
         },
         {
             "username": "mysticfae",
-            "image": "https://api.api-ninjas.com/v1/randomimage",
+            "image": "https://picsum.photos/600/600?random=6",
             "caption": "Lorem ipsum",
-            "avatar": "https://api.api-ninjas.com/v1/randomimage"
+            "avatar": "https://picsum.photos/50/50?random=6"
         },
         {
             "username": "chaeese",
-            "image":"https://api.api-ninjas.com/v1/randomimage",
+            "image":"https://picsum.photos/600/600?random=7",
             "caption": "Lorem ipsum",
-            "avatar": "https://api.api-ninjas.com/v1/randomimage"
+            "avatar": "https://picsum.photos/50/50?random=7"
         },
         {
             "username": "jjennieqt",
-            "image":"https://api.api-ninjas.com/v1/randomimage",
+            "image":"https://picsum.photos/600/600?random=8",
             "caption": "Lorem ipsum",
-            "avatar": "https://api.api-ninjas.com/v1/randomimage"
+            "avatar": "https://picsum.photos/50/50?random=8"
         }, 
         {
             "username": "blueb3rry",
-            "image":"https://api.api-ninjas.com/v1/randomimage",
+            "image":"https://picsum.photos/600/600?random=9",
             "caption": "Lorem ipsum",
-            "avatar": "https://api.api-ninjas.com/v1/randomimage"
+            "avatar": "https://picsum.photos/50/50?random=9"
         },
         {
             "username": "yunnjoutt",
-            "image":"https://api.api-ninjas.com/v1/randomimage",
+            "image":"https://picsum.photos/600/600?random=10",
             "caption": "Lorem ipsum",
-            "avatar": "https://api.api-ninjas.com/v1/randomimage"
+            "avatar": "https://picsum.photos/50/50?random=10"
         },
         {
             "username": "ryujinspo",
-            "image":"https://api.api-ninjas.com/v1/randomimage",
+            "image":"https://picsum.photos/600/600?random=11",
             "caption": "Lorem ipsum",
-            "avatar": "https://api.api-ninjas.com/v1/randomimage"
+            "avatar": "https://picsum.photos/50/50?random=11"
         },
         {
             "username": "salunarchive",
-            "image":"https://api.api-ninjas.com/v1/randomimage",
+            "image":"https://picsum.photos/600/600?random=12",
             "caption": "Lorem ipsum",
-            "avatar": "https://api.api-ninjas.com/v1/randomimage"
+            "avatar": "https://picsum.photos/50/50?random=12"
         },
         {
             "username": "yvnangel",
-            "image":"https://api.api-ninjas.com/v1/randomimage",
+            "image":"https://picsum.photos/600/600?random=13",
             "caption": "Lorem ipsum",
-            "avatar": "https://api.api-ninjas.com/v1/randomimage"
+            "avatar": "https://picsum.photos/50/50?random=13"
         },
         {
             "username": "cheabea",
-            "image":"https://api.api-ninjas.com/v1/randomimage",
+            "image":"https://picsum.photos/600/600?random=14",
             "caption": "Lorem ipsum",
-            "avatar": "https://api.api-ninjas.com/v1/randomimage"
+            "avatar": "https://picsum.photos/50/50?random=14"
         },
         {
             "username": "dreamy.glimpse",
-            "image":"https://api.api-ninjas.com/v1/randomimage",
+            "image":"https://picsum.photos/600/600?random=15",
             "caption": "Lorem ipsum",
-            "avatar": "https://api.api-ninjas.com/v1/randomimage"
+            "avatar": "https://picsum.photos/50/50?random=15"
         }
     ]
 }

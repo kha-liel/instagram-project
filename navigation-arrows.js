@@ -9,35 +9,62 @@ export class NavigationArrows extends DDDSuper(I18NMixin(LitElement)) {
 
     constructor() {
         super();
+        this.direction = 'right';
     }
 
     static get properties() {
         return {
             ...super.properties,
-            direction: { type: String } // left or right
+            direction: { type: String, reflect: true } // left or right
         };
     }
 
     static get styles() {
         return [super.styles,
         css`
+
+        :host {
+            display: block;
+            pointer-events: auto;
+        }
+
         button {
-            background: white;
-            border: 2px solid var(--ddd-theme-default-skyBlue);
+            background-color: var(--ddd-theme-default-limestoneGray);
+            border: none;
             border-radius: 50%;
-            width: 48px;
-            height: 48px;
+            width: 44px;
+            height: 44px;
             display: flex;
+            cursor: pointer;
             align-items: center;
             justify-content: center;
-            color: var(--ddd-theme-default-skyBlue);
+            //text-align: center;
+            box-shadow: var(--ddd-boxShadow-sm);
             font-size: 40px;
-            font-weight: bold;
+            //overflow: hidden;
+            //line-height: 0;
+        }
+
+        .arrow-shape {
+            color: var(--ddd-theme-default-black);
+            width: 12px;
+            height: 12px;
+            border-top: 4px solid var(--ddd-theme-default-coalyGray);
+            border-right: 4px solid var(--ddd-theme-default-coalyGray);
+            transform: rotate(45deg);
+            margin-left: -4px;
+        }
+
+        button.left {
+            transform: rotate(180deg);
+        }
+
+        button.left:hover {
+            transform: rotate(180deg) scale(1.08);
         }
 
         button:hover, button:focus {
-            background: var(--ddd-theme-default-skyBlue);
-            color: white;
+            background: var(--ddd-theme-default-linestoneLight);
             outline: none;
         }
         `];
@@ -46,8 +73,8 @@ export class NavigationArrows extends DDDSuper(I18NMixin(LitElement)) {
     render() {
         const isLeft = this.direction === 'left';
         return html`
-            <button aria-label="${isLeft ? 'Previous Slide' : 'Next Slide'}">
-                ${isLeft ? html`&#8249;` : html`&#8250;`}
+            <button class="${isLeft ? 'left' : ''}" aria-label="${isLeft ? 'Previous Slide' : 'Next Slide'}">
+                <div class="arrow-shape"></div>
             </button>
         `;
     }

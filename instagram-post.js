@@ -23,7 +23,8 @@ export class InstagramPost extends DDDSuper(I18NMixin(LitElement)) {
       subheading: { type : String, attribute: "subheading" },
       title: { type: String },
       active: { type: Boolean, reflect : true },
-      image: { type: String }
+      image: { type: String },
+      avatar: { type: String}
     };
   }
 
@@ -49,7 +50,7 @@ export class InstagramPost extends DDDSuper(I18NMixin(LitElement)) {
         padding: var(--ddd-spacing-3);
       }
 
-      .avatar {
+      .avatar-img {
         width: 32px;
         height: 32px;
         background-color: var(--ddd-theme-default-skyBlue);
@@ -98,11 +99,11 @@ export class InstagramPost extends DDDSuper(I18NMixin(LitElement)) {
     return html`
       <div class="instagram-post">
         <div class="card-header">
-          <div class="avatar"></div>
+          <img src="${this.avatar}" class="avatar-img">
           <span class="top-heading">${this.topHeading}</span>
         </div>
 
-        <img class="fox-image" src="${this.image}" alt="Random Image">
+        <img class="fox-image" src="${this.image}" alt="Post Image">
 
         <div class="card-content">
           <span class="subheading">${this.topHeading}</span>

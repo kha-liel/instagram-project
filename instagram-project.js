@@ -52,10 +52,11 @@ export class InstagramProject extends DDDSuper(I18NMixin(LitElement)) {
       .container {
         position: relative;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         background-color: transparent;
-        padding: var(--ddd-spacing-12);
+        padding: var(--ddd-spacing-4);
         width: 100%;
         min-height: 300px;
         border-radius: var(--ddd-radius-xs);
@@ -75,6 +76,7 @@ export class InstagramProject extends DDDSuper(I18NMixin(LitElement)) {
       .slide-viewer {
         width: 100%;
         max-width: 800px;
+        position: relative;
       }
 
       @media (max-width: 600px) {
@@ -94,8 +96,9 @@ export class InstagramProject extends DDDSuper(I18NMixin(LitElement)) {
       .navigation-controls {
         position: absolute;
         top: 50%;
-        left: 0;
-        right: 0;
+        width: 100%;
+        max-width: 925px;
+        top: 50%;
         transform: translateY(-50%);
         display: flex;
         justify-content: space-between;
@@ -103,9 +106,10 @@ export class InstagramProject extends DDDSuper(I18NMixin(LitElement)) {
         z-index: 10;
       }
       .dots-indicator-container {
-        position: absolute;
-        bottom: var(--ddd-spacing-10);
-        left: var(--ddd-spacing-20);
+        display: flex;
+        justify-content: center;
+        margin-top: var(--ddd-spacing-4);
+        width: 100%;
       }
 
   
@@ -159,11 +163,15 @@ renderFromData() {
     item.setAttribute('top-heading', post.username);
     item.setAttribute('image', post.image);
 
-    if (i==0) {
+    if (post.avatar) {
+      item.setAttribute('avatar', post.avatar);
+    }
+
+    if (i === 0) {
       item.setAttribute('active', '');
     }
 
-    item.innerHTML = `<p>${post.caption}</p>`;
+    item.innerHTML = `<span>${post.caption}</span>`;
     this.appendChild(item);
   });
   this.total = this.posts.length; // sets total posts = 15

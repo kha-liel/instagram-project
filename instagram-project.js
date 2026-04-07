@@ -184,6 +184,12 @@ renderFromData() {
   } */
 
 
+  updateQueryParam(key, value) {
+    const currentUrl = new URL(window.location.href);
+    currentUrl.searchParams.set(key, value);
+    history.pushState(null, '', currentUrl.toString());
+  }
+
   handleSlotChange (e) {
     const slides = Array.from(this.querySelectorAll('instagram-post'));
     this.total = slides.length;
@@ -227,16 +233,15 @@ renderFromData() {
     });
   }
 
-// take this out
-/* firstUpdated() {
-  console.log("Component loaded, fetching fox...");
-  this.getFox();
-  this.updatedVisibleSlide();
-} */
+// changed to fit check in 2
+firstUpdated() {
+  this.getData();
+} 
 
 updated(changedProperties) {
   if (changedProperties.has('index')) {
     this.updatedVisibleSlide();
+    this.updateQueryParam('activeIndex', this.index);
   }
 }
 }

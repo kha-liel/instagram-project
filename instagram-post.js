@@ -102,7 +102,7 @@ export class InstagramPost extends DDDSuper(I18NMixin(LitElement)) {
           <span class="top-heading">${this.topHeading}</span>
         </div>
 
-        <img class="fox-image" src="${this.image}" alt="Random Fox Image">
+        <img class="fox-image" src="${this.image}" alt="Random Image">
 
         <div class="card-content">
           <span class="subheading">${this.topHeading}</span>

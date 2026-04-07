@@ -8,6 +8,22 @@
   <meta name="Description" content="Demonstration for instagram-project">
 
   <style>
+    :root {
+      color-scheme: light-dark;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      padding: 20px;
+    }
+
+    h1, h5 {
+      text-align: center;
+    }
+
     :root, html, body {
       margin: var(--ddd-spacing-0);
       padding: var(--ddd-spacing-0);
@@ -33,10 +49,12 @@
 
 <body>
   <div id="dark-mode">
-    <h1>instagram-project</h1>
+    <h1>Instagram Feed</h1>
+    <h5>instagram-project</h5>
     <!-- this is going to do whatever the tag's defaults are -->
     <instagram-project user-id="0"></instagram-project>
-    <instagram-project user-id="1"></instagram-project>
+    <instagram-project user-id="5"></instagram-project>
+    <instagram-project user-id="10"></instagram-project>
   </div>
   <script type="module" src="./instagram-project.js"></script>
   <script type="module" src="./instagram-post.js"></script>

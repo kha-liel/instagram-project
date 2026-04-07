@@ -25,7 +25,8 @@ export class InstagramPost extends DDDSuper(I18NMixin(LitElement)) {
       title: { type: String },
       active: { type: Boolean, reflect : true },
       image: { type: String },
-      avatar: { type: String}
+      avatar: { type: String},
+      liked: { type: Boolean, reflect: true}
     };
   }
 
@@ -43,8 +44,15 @@ export class InstagramPost extends DDDSuper(I18NMixin(LitElement)) {
         max-width: 800px;
         margin: auto;
         overflow: hidden;
+        --icon-color: light-dark(var(--ddd-theme-default-colayGray), var(--ddd-theme-default-linestoneLight));
+        --heart-color: light-dark(#262626, #f5f5f5);
       }
       
+      .post-actions {
+        display: flex;
+        justify-content: space-between;
+        padding: var(--ddd-spacing-2) var(--ddd-spacing-4);
+      }
       .card-header {
         display: flex;
         align-items: center;
@@ -73,7 +81,7 @@ export class InstagramPost extends DDDSuper(I18NMixin(LitElement)) {
       }
 
       .card-content {
-        padding: var(--ddd-spacing-4);
+        padding: var(--ddd-spacing-1) var(--ddd-spacing-4) var(--ddd-spacing-4) var(--ddd-spacing-4);
         text-align: left;
       }
 
@@ -95,7 +103,7 @@ export class InstagramPost extends DDDSuper(I18NMixin(LitElement)) {
       .post-actions {
         display: flex;
         justify-content: space-between;
-        padding: var(--ddd-spacing-2) var(--ddd-spacing-4);
+        padding: var(--ddd-spacing-1) var(--ddd-spacing-4);
         align-items: center;
       }
 
@@ -103,30 +111,60 @@ export class InstagramPost extends DDDSuper(I18NMixin(LitElement)) {
         background: none;
         border: none;
         cursor: pointer;
-        font-size: 24px;
-        color: var(--active-heart-color, var(--ddd-theme-default-coalyGray));
+        font-size: 32px;
+        color: var(--heart-color);
+        margin-left: 0;
+        padding: 0;
+        align-items: center;
+      }
+
+      .like-btn.liked {
+        color: #ed4956;
       }
 
       .share-btn {
         background: none;
-        border: none;
+        border: 1px solid var(--ddd-theme-default-coalyGray);
+        border-radius: var(--ddd-radius-sm);
         cursor: pointer;
         font-size: 20px;
+        color: var(--icon-color);
       }
 
     `];
   }
 
+  toggleLike() {
+    this.liked = !this.liked;
+  }
+
+  copyLink() {
+    const url = window.location.href;
+    navigator.clipboard.writeText(url);
+    alert("Link copied!")
+  }
+
   // Lit render the HTML
   render() {
     return html`
+
       <div class="instagram-post">
         <div class="card-header">
-          <img src="${this.avatar}" class="avatar-img">
+          <img src="${this.avatar}" class="avatar-img" alt="${this.topHeading}'s avatar">
           <span class="top-heading">${this.topHeading}</span>
         </div>
 
         <img class="fox-image" src="${this.image}" alt="Post Image">
+
+        <div class="post-actions">
+          <button class="like-btn" @click="${this.toggleLike}">
+            ${this.liked ? html`<span>&#10084;&#65039;</span>` : html`<span>&#129293;</span>`}
+          </button>
+
+          <button class="share-btn" @click="${this.copyLink}">
+            <span>Share</span>
+          </button>
+        </div>
 
         <div class="card-content">
           <span class="subheading">${this.topHeading}</span>
@@ -135,9 +173,7 @@ export class InstagramPost extends DDDSuper(I18NMixin(LitElement)) {
           </div>
         </div>
       </div>
-        `;
-}
-
+        `};
 }
 
 globalThis.customElements.define(InstagramPost.tag, InstagramPost);

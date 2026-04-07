@@ -33,7 +33,7 @@ export class InstagramProject extends DDDSuper(I18NMixin(LitElement)) {
       ...super.properties,
       index: { type: Number, reflect : true },
       total : { type: Number},
-      // foxData : { type: Object }
+      userID: { type: String, attribute: 'user-id'},
       posts : { type: Array }
     };
   }
@@ -151,7 +151,10 @@ async getData() {
   const dataUrl = new URL('./posts.json', import.meta.url).href;
   const response = await fetch(dataUrl);
   const data = await response.json();
-  this.posts = data.posts;
+  
+  // using the id to pick a specific user starting point  
+  const startIdx = parseInt(this.userId) || 0;
+  this.posts = data.posts.slice(startIdx, startIdx + 15);
   this.renderFromData();
 }
 

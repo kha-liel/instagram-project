@@ -13,6 +13,7 @@ export class InstagramPost extends DDDSuper(I18NMixin(LitElement)) {
         this.subheading = "Slide #, sub-heading";
         this.title = "Screenreader accessibility";
         this.active = false;
+        this.liked = false;
     }
 
     // Lit reactive properties
@@ -89,6 +90,28 @@ export class InstagramPost extends DDDSuper(I18NMixin(LitElement)) {
         font-size: var(--ddd-font-size-xs);
         color: var(--ddd-theme-default-slateGray);
         line-height: var(--ddd-lh-120);
+      }
+
+      .post-actions {
+        display: flex;
+        justify-content: space-between;
+        padding: var(--ddd-spacing-2) var(--ddd-spacing-4);
+        align-items: center;
+      }
+
+      .like-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 24px;
+        color: var(--active-heart-color, var(--ddd-theme-default-coalyGray));
+      }
+
+      .share-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 20px;
       }
 
     `];

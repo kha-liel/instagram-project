@@ -18,9 +18,9 @@
     instagram-project {
       margin: var(--ddd-spacing-2);
     }
-    instagram-project:hover {
-      /* box-shadow: var(--ddd-boxShadow-sm); */
-    }
+    /* instagram-project:hover {
+       box-shadow: var(--ddd-boxShadow-sm); 
+    } */
     #light-mode {
       --counter-app-font-size: var(--ddd-font-size-l);
       background-color: var(--ddd-accent-2);
@@ -35,8 +35,8 @@
   <div id="dark-mode">
     <h1>instagram-project</h1>
     <!-- this is going to do whatever the tag's defaults are -->
-    <instagram-project index="0">
-    </instagram-project>
+    <instagram-project user-id="0"></instagram-project>
+    <instagram-project user-id="1"></instagram-project>
   </div>
   <script type="module" src="./instagram-project.js"></script>
   <script type="module" src="./instagram-post.js"></script>

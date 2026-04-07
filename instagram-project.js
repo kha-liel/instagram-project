@@ -45,7 +45,7 @@ export class InstagramProject extends DDDSuper(I18NMixin(LitElement)) {
       :host {
         display: block;
         color: var(--ddd-theme-primary);
-        background-color: transparent;
+        background-color: var(--ddd-theme-default-potential10);
         border: none;
         font-family: var(--ddd-font-navigation);
       }
@@ -102,7 +102,7 @@ export class InstagramProject extends DDDSuper(I18NMixin(LitElement)) {
         transform: translateY(-50%);
         display: flex;
         justify-content: space-between;
-        padding: 0 var(--dd-spacing-5);
+        padding: var(--dd-spacing-5);
         z-index: 10;
       }
       .dots-indicator-container {

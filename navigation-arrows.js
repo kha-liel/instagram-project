@@ -40,7 +40,7 @@ export class NavigationArrows extends DDDSuper(I18NMixin(LitElement)) {
             justify-content: center;
             //text-align: center;
             box-shadow: var(--ddd-boxShadow-sm);
-            font-size: 40px;
+            font-size: var(--ddd-font-size-3xs);
             //overflow: hidden;
             //line-height: 0;
         }

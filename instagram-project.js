@@ -165,19 +165,16 @@ renderFromData() {
     const item = document.createElement('instagram-post');
     item.setAttribute('top-heading', post.username);
     item.setAttribute('image', post.image);
-
-    if (post.avatar) {
-      item.setAttribute('avatar', post.avatar);
-    }
+    item.setAttribute('avatar'. ths.userData.avatar);
 
     if (i === 0) {
       item.setAttribute('active', '');
     }
 
-    item.innerHTML = `<span>${post.caption}</span>`;
+    item.innerHTML = `<span>Lorem ipsum</span>`;
     this.appendChild(item);
   });
-  this.total = this.posts.length; // sets total posts = 15
+  this.total = this.posts.length;
 }
 
   // take this out

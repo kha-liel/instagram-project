@@ -165,9 +165,9 @@ renderFromData() {
   this.innerHTML = '';
   this.posts.forEach((post, i) => {
     const item = document.createElement('instagram-post');
-    item.setAttribute('top-heading', post.username);
-    item.setAttribute('image', post.image);
-    item.setAttribute('avatar'. this.userData.avatar);
+    item.setAttribute('top-heading', this.userData.username);
+    item.setAttribute('image', this.userData.posts.image);
+    item.setAttribute('avatar', this.userData.avatar);
 
     if (i === 0) {
       item.setAttribute('active', '');

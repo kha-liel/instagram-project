@@ -41,6 +41,7 @@ export class InstagramPost extends DDDSuper(I18NMixin(LitElement)) {
         color: var(--ddd-theme-default-coalyGray);
         border-radius: var(--ddd-radius-sm);
         font-family: var(--ddd-font-primary);
+        width: 100%;
         max-width: 800px;
         margin: auto;
         overflow: hidden;
@@ -88,7 +89,7 @@ export class InstagramPost extends DDDSuper(I18NMixin(LitElement)) {
       .subheading {
         font-size: var(--ddd-font-size-s);
         font-weight: var(--ddd-font-weight-bold);
-        color: var(--ddd-theme-fefault-coalyGray);
+        color: var(--ddd-theme-default-coalyGray);
         margin-right: var(--ddd-spacing-2);
         display: inline;
       }
@@ -173,7 +174,8 @@ export class InstagramPost extends DDDSuper(I18NMixin(LitElement)) {
           </div>
         </div>
       </div>
-        `};
+        `;
+  }
 }
 
 globalThis.customElements.define(InstagramPost.tag, InstagramPost);

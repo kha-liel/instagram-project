@@ -55,7 +55,7 @@ export class InstagramProject extends DDDSuper(I18NMixin(LitElement)) {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: transparent;
+        background-color: var(--ddd-theme-default-potential10);
         padding: var(--ddd-spacing-4);
         width: 100%;
         min-height: 300px;
@@ -126,13 +126,6 @@ export class InstagramProject extends DDDSuper(I18NMixin(LitElement)) {
       <div class="slide-viewer" @dot-clicked="${this.handleIndexChange}">
         <slot @slotchange="${this.handleSlotChange}"></slot>
       </div>
-      <!--<div class="dots-indicator-container">
-        <slide-indicator
-          .total="${this.total}"
-          .currentIndex="${this.index}"
-          @play-list-index-changed="${this.handleIndexChange}">
-        </slide-indicator>
-      </div> -->
     </div>
     `;
   }
@@ -175,7 +168,7 @@ renderFromData() {
       item.setAttribute('active', '');
     }
 
-    item.innerHTML = `<span>Lorem ipsum</span>`;
+    item.innerHTML = `<span>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</span>`;
     this.appendChild(item);
   });
   this.total = this.posts.length;
@@ -230,7 +223,7 @@ renderFromData() {
     slides.forEach((slide,i) => {
       slide.total = this.total;
       slide.currentIndex = this.index;
-      
+
       if (i === this.index) {
         slide.setAttribute('active', '')
         slide.setAttribute('current-index', i);

@@ -151,11 +151,13 @@ async getData() {
   const dataUrl = new URL('./posts.json', import.meta.url).href;
   const response = await fetch(dataUrl);
   const data = await response.json();
+  const targetUser = data.users.find(user => user.feedId === `user_${this.userID}`);
   
-  // using the id to pick a specific user starting point  
-  const startIdx = parseInt(this.userId) || 0;
-  this.posts = data.posts.slice(startIdx, startIdx + 15);
-  this.renderFromData();
+  if (targetUser) {
+    this.userData = targetUser;
+    this.posts = targetUser.posts;
+    this.renderFromData();
+  }
 }
 
 // updateSlidesWithFox() replacement
@@ -165,7 +167,7 @@ renderFromData() {
     const item = document.createElement('instagram-post');
     item.setAttribute('top-heading', post.username);
     item.setAttribute('image', post.image);
-    item.setAttribute('avatar'. ths.userData.avatar);
+    item.setAttribute('avatar'. this.userData.avatar);
 
     if (i === 0) {
       item.setAttribute('active', '');

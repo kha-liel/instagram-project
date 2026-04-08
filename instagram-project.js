@@ -103,14 +103,6 @@ export class InstagramProject extends DDDSuper(I18NMixin(LitElement)) {
         padding: var(--dd-spacing-5);
         z-index: 10;
       }
-      /*.dots-indicator-container {
-        display: flex;
-        justify-content: center;
-        margin-top: var(--ddd-spacing-4);
-        padding-bottom: var(--ddd-spacing-2);
-        z-index: 5;
-        position: relative;
-      }*/
 
       navigation-arrows[direction="left"] {
         margin-left: -40px;
@@ -131,7 +123,7 @@ export class InstagramProject extends DDDSuper(I18NMixin(LitElement)) {
         <navigation-arrows direction="left" @click="${this.prevSlide}"></navigation-arrows>
         <navigation-arrows direction="right" @click="${this.nextSlide}"></navigation-arrows>
       </div>
-      <div class="slide-viewer">
+      <div class="slide-viewer" @dot-clicked="${this.handleIndexChange}">
         <slot @slotchange="${this.handleSlotChange}"></slot>
       </div>
       <!--<div class="dots-indicator-container">
@@ -191,21 +183,10 @@ renderFromData() {
   this.updatedVisibleSlide();
 }
 
-  // take this out
-  /* updateSlidesWithFox(imageUrl) {
-    const newSlide = document.createElement('instagram-post');
-    newSlide.setAttribute('top-heading','fox_explorer_2026');
-    newSlide.setAttribute('subheading','Look at this floof! #foxes');
-    newSlide.setAttribute('image',imageUrl);
-    newSlide.setAttribute('active','');
-    newSlide.innerHTML = `Look at this floof! #foxes`;
-
-    this.innerHTML = '';
-    this.appendChild(newSlide);
-    this.total = 1;
-  } */
-
-
+  handleDotClick(e) {
+    this.index = e.detail.index;
+  }
+  
   updateQueryParam(key, value) {
     const currentUrl = new URL(window.location.href);
     currentUrl.searchParams.set(key, value);
@@ -248,6 +229,8 @@ renderFromData() {
     }*/
     slides.forEach((slide,i) => {
       slide.total = this.total;
+      slide.currentIndex = this.index;
+      
       if (i === this.index) {
         slide.setAttribute('active', '')
         slide.setAttribute('current-index', i);

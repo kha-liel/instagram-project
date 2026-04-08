@@ -1,154 +1,48 @@
 {
-    "posts": [
+    "users": [
         {
+            "feedId": "user_0",
             "username": "bluwie_pix",
-            "image": "https://picsum.photos/600/600?random=1",
-            "avatar": "https://picsum.photos/50/50?random=1"
+            "avatar": "https://picsum.photos/50/50?random=1",
+            "posts": [
+                { "image": "https://picsum.photos/600/600?random=101"},
+                { "image": "https://picsum.photos/600/600?random=102"},
+                { "image": "https://picsum.photos/600/600?random=103"},
+                { "image": "https://picsum.photos/600/600?random=104"},
+                { "image": "https://picsum.photos/600/600?random=105"},
+                { "image": "https://picsum.photos/600/600?random=106"},
+                { "image": "https://picsum.photos/600/600?random=107"},
+                { "image": "https://picsum.photos/600/600?random=108"},
+                { "image": "https://picsum.photos/600/600?random=109"},
+                { "image": "https://picsum.photos/600/600?random=110"},
+                { "image": "https://picsum.photos/600/600?random=111"},
+                { "image": "https://picsum.photos/600/600?random=112"},
+                { "image": "https://picsum.photos/600/600?random=113"},
+                { "image": "https://picsum.photos/600/600?random=114"},
+                { "image": "https://picsum.photos/600/600?random=115"}
+            ]
         },
         {
+            "feedId": "user_1",
             "username": "withsummerian",
-            "image": "https://picsum.photos/600/600?random=2",
-            "avatar":"https://picsum.photos/50/50?random=2"
-        },
-        {
-            "username": "flowerbeangarden",
-            "image": "https://picsum.photos/600/600?random=3",
-            "avatar":"https://picsum.photos/50/50?random=3"
-        },
-        {
-            "username": "bright_sunny",
-            "image": "https://picsum.photos/600/600?random=4",
-            "avatar":"https://picsum.photos/50/50?random=4"
-        },
-        {
-            "username": "sunskie",
-            "image": "https://picsum.photos/600/600?random=5",
-            "avatar": "https://picsum.photos/50/50?random=5"
-        },
-        {
-            "username": "mysticfae",
-            "image": "https://picsum.photos/600/600?random=6",
-            "avatar": "https://picsum.photos/50/50?random=6"
-        },
-        {
-            "username": "chaeese",
-            "image":"https://picsum.photos/600/600?random=7",
-            "avatar": "https://picsum.photos/50/50?random=7"
-        },
-        {
-            "username": "jjennieqt",
-            "image":"https://picsum.photos/600/600?random=8",
-            "avatar": "https://picsum.photos/50/50?random=8"
-        }, 
-        {
-            "username": "blueb3rry",
-            "image":"https://picsum.photos/600/600?random=9",
-            "avatar": "https://picsum.photos/50/50?random=9"
-        },
-        {
-            "username": "yunnjoutt",
-            "image":"https://picsum.photos/600/600?random=10",
-            "avatar": "https://picsum.photos/50/50?random=10"
-        },
-        {
-            "username": "ryujinspo",
-            "image":"https://picsum.photos/600/600?random=11",
-            "avatar": "https://picsum.photos/50/50?random=11"
-        },
-        {
-            "username": "salunarchive",
-            "image":"https://picsum.photos/600/600?random=12",
-            "avatar": "https://picsum.photos/50/50?random=12"
-        },
-        {
-            "username": "yvnangel",
-            "image":"https://picsum.photos/600/600?random=13",
-            "avatar": "https://picsum.photos/50/50?random=13"
-        },
-        {
-            "username": "cheabea",
-            "image":"https://picsum.photos/600/600?random=14",
-            "avatar": "https://picsum.photos/50/50?random=14"
-        },
-        {
-            "username": "dreamy.glimpse",
-            "image":"https://picsum.photos/600/600?random=15",
-            "avatar": "https://picsum.photos/50/50?random=15"
-        },
-        {
-            "username": "bluwie_pix",
-            "image": "https://picsum.photos/600/600?random=16",
-            "avatar": "https://picsum.photos/50/50?random=16"
-        },
-        {
-            "username": "withsummerian",
-            "image": "https://picsum.photos/600/600?random=17",
-            "avatar":"https://picsum.photos/50/50?random=17"
-        },
-        {
-            "username": "flowerbeangarden",
-            "image": "https://picsum.photos/600/600?random=18",
-            "avatar":"https://picsum.photos/50/50?random=18"
-        },
-        {
-            "username": "bright_sunny",
-            "image": "https://picsum.photos/600/600?random=19",
-            "avatar":"https://picsum.photos/50/50?random=19"
-        },
-        {
-            "username": "sunskie",
-            "image": "https://picsum.photos/600/600?random=20",
-            "avatar": "https://picsum.photos/50/50?random=20"
-        },
-        {
-            "username": "mysticfae",
-            "image": "https://picsum.photos/600/600?random=21",
-            "avatar": "https://picsum.photos/50/50?random=21"
-        },
-        {
-            "username": "chaeese",
-            "image":"https://picsum.photos/600/600?random=22",
-            "avatar": "https://picsum.photos/50/50?random=22"
-        },
-        {
-            "username": "jjennieqt",
-            "image":"https://picsum.photos/600/600?random=23",
-            "avatar": "https://picsum.photos/50/50?random=23"
-        }, 
-        {
-            "username": "blueb3rry",
-            "image":"https://picsum.photos/600/600?random=24",
-            "avatar": "https://picsum.photos/50/50?random=24"
-        },
-        {
-            "username": "yunnjoutt",
-            "image":"https://picsum.photos/600/600?random=25",
-            "avatar": "https://picsum.photos/50/50?random=25"
-        },
-        {
-            "username": "ryujinspo",
-            "image":"https://picsum.photos/600/600?random=26",
-            "avatar": "https://picsum.photos/50/50?random=26"
-        },
-        {
-            "username": "salunarchive",
-            "image":"https://picsum.photos/600/600?random=27",
-            "avatar": "https://picsum.photos/50/50?random=27"
-        },
-        {
-            "username": "yvnangel",
-            "image":"https://picsum.photos/600/600?random=28",
-            "avatar": "https://picsum.photos/50/50?random=28"
-        },
-        {
-            "username": "cheabea",
-            "image":"https://picsum.photos/600/600?random=29",
-            "avatar": "https://picsum.photos/50/50?random=29"
-        },
-        {
-            "username": "dreamy.glimpse",
-            "image":"https://picsum.photos/600/600?random=30",
-            "avatar": "https://picsum.photos/50/50?random=30"
+            "avatar": "https://picsum.photos/50/50?random=2",
+            "posts": [
+                { "image": "https://picsum.photos/600/600?random=201"},
+                { "image": "https://picsum.photos/600/600?random=202"},
+                { "image": "https://picsum.photos/600/600?random=203"},
+                { "image": "https://picsum.photos/600/600?random=204"},
+                { "image": "https://picsum.photos/600/600?random=205"},
+                { "image": "https://picsum.photos/600/600?random=206"},
+                { "image": "https://picsum.photos/600/600?random=207"},
+                { "image": "https://picsum.photos/600/600?random=208"},
+                { "image": "https://picsum.photos/600/600?random=209"},
+                { "image": "https://picsum.photos/600/600?random=210"},
+                { "image": "https://picsum.photos/600/600?random=211"},
+                { "image": "https://picsum.photos/600/600?random=212"},
+                { "image": "https://picsum.photos/600/600?random=213"},
+                { "image": "https://picsum.photos/600/600?random=214"},
+                { "image": "https://picsum.photos/600/600?random=215"}
+            ]
         }
     ]
 }

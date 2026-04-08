@@ -26,7 +26,9 @@ export class InstagramPost extends DDDSuper(I18NMixin(LitElement)) {
       active: { type: Boolean, reflect : true },
       image: { type: String },
       avatar: { type: String},
-      liked: { type: Boolean, reflect: true}
+      liked: { type: Boolean, reflect: true},
+      total: { type: Number},
+      currentIndex: { type: Number, attribute: "current-index" }
     };
   }
 
@@ -132,6 +134,15 @@ export class InstagramPost extends DDDSuper(I18NMixin(LitElement)) {
         color: var(--icon-color);
       }
 
+      .dots-indicator-container {
+        display: flex;
+        justify-content: center;
+        margin-top: var(--ddd-spacing-4);
+        padding-bottom: var(--ddd-spacing-2);
+        z-index: 5;
+        position: relative;
+      }
+
     `];
   }
 
@@ -156,6 +167,13 @@ export class InstagramPost extends DDDSuper(I18NMixin(LitElement)) {
         </div>
 
         <img class="fox-image" src="${this.image}" alt="Post Image">
+        <div class="dots-indicator-container">
+        <slide-indicator
+          .total="${this.total}"
+          .currentIndex="${this.currentIndex}"
+          @play-list-index-changed="${this._handleDotClick}">
+        </slide-indicator>
+        </div>
 
         <div class="post-actions">
           <button class="like-btn" @click="${this.toggleLike}">
@@ -175,6 +193,14 @@ export class InstagramPost extends DDDSuper(I18NMixin(LitElement)) {
         </div>
       </div>
         `;
+  }
+
+  _handleDotClick(e) {
+    this.dispatchEvent(new CustomEvent('dot-clicked', {
+      detail: { index: e.detail.index },
+      bubbles: true,
+      composed: true
+    }));
   }
 }
 

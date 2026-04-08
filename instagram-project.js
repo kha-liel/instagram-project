@@ -97,21 +97,28 @@ export class InstagramProject extends DDDSuper(I18NMixin(LitElement)) {
         position: absolute;
         top: 50%;
         width: 100%;
-        max-width: 925px;
-        top: 50%;
         transform: translateY(-50%);
         display: flex;
         justify-content: space-between;
         padding: var(--dd-spacing-5);
         z-index: 10;
       }
-      .dots-indicator-container {
+      /*.dots-indicator-container {
         display: flex;
         justify-content: center;
         margin-top: var(--ddd-spacing-4);
-        width: 100%;
+        padding-bottom: var(--ddd-spacing-2);
+        z-index: 5;
+        position: relative;
+      }*/
+
+      navigation-arrows[direction="left"] {
+        margin-left: -40px;
       }
 
+      navigation-arrows[direction="right"] {
+        margin-right: -40px;
+      }
   
     `];
   }
@@ -127,13 +134,13 @@ export class InstagramProject extends DDDSuper(I18NMixin(LitElement)) {
       <div class="slide-viewer">
         <slot @slotchange="${this.handleSlotChange}"></slot>
       </div>
-      <div class="dots-indicator-container">
+      <!--<div class="dots-indicator-container">
         <slide-indicator
           .total="${this.total}"
           .currentIndex="${this.index}"
           @play-list-index-changed="${this.handleIndexChange}">
         </slide-indicator>
-      </div>
+      </div> -->
     </div>
     `;
   }
@@ -166,8 +173,11 @@ renderFromData() {
   this.posts.forEach((post, i) => {
     const item = document.createElement('instagram-post');
     item.setAttribute('top-heading', this.userData.username);
-    item.setAttribute('image', this.userData.posts.image);
+    item.setAttribute('image', post.image);
     item.setAttribute('avatar', this.userData.avatar);
+
+    item.total = this.posts.length;
+    item.currentIndex = 0;
 
     if (i === 0) {
       item.setAttribute('active', '');
@@ -177,6 +187,8 @@ renderFromData() {
     this.appendChild(item);
   });
   this.total = this.posts.length;
+
+  this.updatedVisibleSlide();
 }
 
   // take this out
@@ -231,12 +243,14 @@ renderFromData() {
     const slides = Array.from(this.querySelectorAll('instagram-post'));
     this.total = slides.length;
     
-    if (this.index >= slides.length) {
-      this.index = 0;
-    }
+   /* if (this.index >= slides.length) {
+      this.index = 0; 
+    }*/
     slides.forEach((slide,i) => {
+      slide.total = this.total;
       if (i === this.index) {
         slide.setAttribute('active', '')
+        slide.setAttribute('current-index', i);
     } else { 
       slide.removeAttribute('active');
     }

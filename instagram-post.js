@@ -114,10 +114,10 @@ export class InstagramPost extends DDDSuper(I18NMixin(LitElement)) {
         background: none;
         border: none;
         cursor: pointer;
-        font-size: 32px;
+        font-size: var(--ddd-font-size-3xs);
         color: var(--heart-color);
-        margin-left: 0;
-        padding: 0;
+        margin-left: var(--ddd-spacing-0);
+        padding: var(--ddd-spacing-0);
         align-items: center;
       }
 
@@ -130,7 +130,7 @@ export class InstagramPost extends DDDSuper(I18NMixin(LitElement)) {
         border: 1px solid var(--ddd-theme-default-coalyGray);
         border-radius: var(--ddd-radius-sm);
         cursor: pointer;
-        font-size: 20px;
+        font-size: var(--ddd-font-size-3xs);
         color: var(--icon-color);
       }
 
@@ -196,6 +196,7 @@ export class InstagramPost extends DDDSuper(I18NMixin(LitElement)) {
   }
 
   _handleDotClick(e) {
+
     this.dispatchEvent(new CustomEvent('dot-clicked', {
       detail: { index: e.detail.index },
       bubbles: true,
